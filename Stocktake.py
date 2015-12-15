@@ -11,8 +11,72 @@ avg = 0.9532, or 0.9501
 
 '''
 tequila_list = ["Jose Cuervo", "JLP", "Herradura", "El Jimador", "Arette", "Casa Noble","Don Julio Blanco", "Don Julio", "Don Julio 1942", "KAH", "Patron",\
-                "Porfidio", "1800", "1800 Anejo", "Fortaleza", "T1", "Gran Centenario", "Jose Cuervo Reserva de la Familia"]
+                "Porfidio", "1800", "1800 Anejo", "Fortaleza", "T1", "Gran Centenario", "Jose Cuervo Reserva"]
+                
+dict = {
+    "jose juervo":0.9, #guess
+    "jlp":0.9, #guess
+    "herradura": 0.9, #guess
+    "el jimador":0.53,
+    "arette":0.638,
+    "casa noble":0.905,
+    "don julio blanco":0.702,
+    "don julio":0.789,
+    "don julio 1942":.7, #guess
+    "kah":.6,
+    "porfidio":0.7,
+    "1800":0.817,
+    "1800 anejo":0.747,
+    "fortaleza":0.791,
+    "t1":0.951,
+    "gran centenario":0.583,
+    "jose cuervo reserva:0.765
+}
 rho = 0.9501
+
+
+def test():
+    print("Type the name of the Tequila you want to test. Type 'Help' to see a list of all tequilas.")
+    name = input("name : ")
+    if name.lower() == "help":
+        print("These are all the types of Tequila supported. If you're having difficulty, make sure you're spelling them right:")
+        print(tequila_list)
+        print("")
+        test()
+    elif name.lower() == dict.key(name.lower()):
+        name = name.lower()
+        weight_b = bottle_weights[name]
+         weight_t =(input("How much does this weigh? "))
+        try:
+            weight_t = float(weight_t)
+        except:
+            print("Whoops! Try *just* inputting numbers, nothing else")
+            test()
+        weight_liquid = weight_t - weight_b
+        volume = weight_liquid / rho
+        shots = volume / .03
+        print("There are {} 30 ml shots left in this bottle".format(shots))
+        print ("")
+        test()
+#to do: set an elif name == "water", then ask for bottle, then set rho = 1 as a test
+    else:
+        print("Whoops! I don't recognise that name. Type 'Help' to see a list of accepted name, \
+        and make sure they're spelt correctly!")
+        test()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 def test():
     #resets rho, in case some exact densities are used\
     #ie with Reserva de la familia, it will override the global definition
@@ -374,5 +438,5 @@ space, and replace $NAME and $BOTTLE_WEIGHT.
         test()
     
 '''    
-
+'''
 test()
