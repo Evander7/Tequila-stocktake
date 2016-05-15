@@ -1,3 +1,4 @@
 # Tequila-stocktake
 A script to help with the stocktake of Tequila
-To add new tequilas, add them to the list of tequilas, and then add them (in lower case) to the dictionary, with its associated value being the weight of its empty bottle
+It works by keeping a list of the weight of bottles, and then to stocktake you simply weigh the bottle, and it tells
+you how much liquor is left!!
